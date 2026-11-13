@@ -1,0 +1,34 @@
+erDiagram
+  products ||--o{ order_items : "se vende en"
+  orders ||--|{ order_items : "contiene"
+  products {
+    int id PK
+    text nombre
+    text categoria
+    real precio
+    int stock
+    text emoji
+    text descripcion
+  }
+  orders {
+    int id PK
+    text cliente_nombre
+    text cliente_correo
+    real total
+    text creado_en
+  }
+  order_items {
+    int id PK
+    int order_id FK
+    int product_id FK
+    text nombre
+    real precio_unitario
+    int cantidad
+  }
+  messages {
+    int id PK
+    text nombre
+    text correo
+    text mensaje
+    text creado_en
+  }

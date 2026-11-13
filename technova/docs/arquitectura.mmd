@@ -1,0 +1,20 @@
+flowchart LR
+  subgraph CLIENTE["Cliente · React + Bootstrap"]
+    direction TB
+    C1["Componentes<br/>Catalog, CartDrawer, ContactForm"]
+    C2["Hooks y contextos<br/>useProducts, CartContext"]
+    C3["Servicios del cliente<br/>productService, orderService, contactService"]
+    C4["apiClient<br/>fetch + manejo de errores"]
+    C1 --> C2 --> C3 --> C4
+  end
+  subgraph SERVIDOR["Servidor · Node + Express"]
+    direction TB
+    S1["Rutas<br/>/api/products, /orders, /contact"]
+    S2["Controladores<br/>HTTP ↔ servicios"]
+    S3["Servicios<br/>reglas de negocio y validación"]
+    S4["Repositorios<br/>acceso a datos (SQL)"]
+    S1 --> S2 --> S3 --> S4
+  end
+  DB[("SQLite<br/>products · orders<br/>order_items · messages")]
+  C4 -- "HTTP / JSON" --> S1
+  S4 --> DB

@@ -1,0 +1,14 @@
+{
+  "name": "technova",
+  "version": "0.5.0",
+  "private": true,
+  "description": "TechNova: tienda en línea (React + Express + SQLite). Avance al 50%.",
+  "scripts": {
+    "setup": "npm --prefix server install && npm --prefix client install",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "test": "npm --prefix server test",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev"
+  }
+}
